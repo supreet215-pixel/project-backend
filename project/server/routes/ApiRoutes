@@ -1,0 +1,13 @@
+const InvProfileController= require("../apis/investor_profile/InvProfileController")
+const CommentsController = require("../apis/idea_comments/CommentsController")
+
+
+
+const router=require("express").Router()
+
+router.post("/InvProfile/register",InvProfileController.register)
+router.post("/Comments/add",CommentsController.add)
+router.post("/Comments/single",CommentsController.single)
+
+
+module.exports = router;
