@@ -85,7 +85,7 @@ const DeleteOne = (req, res) => {
             .then(() => {
               res.send({
                 status: 200,
-                message: "delete",
+                message: "Comment Deleted!🫡",
                 success: true,
               });
             })
