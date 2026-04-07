@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 
 const db = require("./server/config/db");
+const adminSeeder = require("./server/config/seeder.js");
+
+adminSeeder()
 
 // body - parser for req.body
 app.use(express.urlencoded());
@@ -13,8 +16,10 @@ app.get("/", (req, res) => {
 });
 
 const apiroutes = require("./server/routes/Apiroutes");
+const userRoute = require("./server/routes/userRoutes.js");
 
 app.use("/apis", apiroutes);
+app.use("/user", userRoute);
 
 // for app listening
 app.listen(3000, () => {

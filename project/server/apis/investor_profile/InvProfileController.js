@@ -1,5 +1,6 @@
 const userModel = require("../users/UserModel");
 const invProfileModel = require("./InvProfileModel");
+const bcrypt = require("bcrypt");
 
 const register = (req, res) => {
   let errMsg = [];
@@ -37,27 +38,36 @@ const register = (req, res) => {
           let userobj = new userModel();
           userobj.name = req.body.name;
           userobj.email = req.body.email;
-          userobj.password = req.body.password;
-          userobj.userType = "2"
+          ((userobj.password = bcrypt.hashSync(req.body.password, 10)),
+            (userobj.userType = "2"));
 
-          userobj.save().then((data) => {
-            console.log(data._id);
+          userobj
+            .save()
+            .then((data) => {
+              console.log(data._id);
 
-            let invProfileobj = new invProfileModel();
-            ((invProfileobj.country = req.body.country),
-              (invProfileobj.kycStatus = req.body.kycStatus),
-              (invProfileobj.userId = data._id),
-              (invProfileobj.riskPreference = req.body.Contact));
+              let invProfileobj = new invProfileModel();
+              ((invProfileobj.country = req.body.country),
+                (invProfileobj.kycStatus = req.body.kycStatus),
+                (invProfileobj.userId = data._id),
+                (invProfileobj.riskPreference = req.body.Contact));
 
-            invProfileobj.save().then((invProfile) => {
+              invProfileobj.save().then((invProfile) => {
+                res.send({
+                  message: "Investers added successfully",
+                  status: 201,
+                  success: true,
+                  data: invProfile,
+                });
+              });
+            })
+            .catch((err) => {
               res.send({
-                message: "Investers added successfully",
-                status: 201,
-                success: true,
-                data: invProfile,
+                massage: err,
+                success: false,
+                status: 403,
               });
             });
-          }).catch(()=>{});
         } else {
           res.send({
             massage: "User already exist",
@@ -66,12 +76,17 @@ const register = (req, res) => {
           });
         }
       })
-      .catch(()=>{});
+      .catch((err) => {
+        console.log(err);
+        res.send({
+          massage: err,
+          success: false,
+          status: 403,
+        });
+      });
   }
 };
 
-
-
-module.exports={
-    register
-}
+module.exports = {
+  register,
+};

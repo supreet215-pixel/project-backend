@@ -18,7 +18,7 @@ router.post("/InvProfile/register",InvProfileController.register)
 
 
 // token checker
-router.use(require("../middleware/adminTokenCheck"))
+router.use(require("../middleware/userTokenCheck"))
 
 // comments
 router.post("/Comments/add",CommentsController.add)

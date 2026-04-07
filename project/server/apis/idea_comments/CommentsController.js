@@ -108,8 +108,88 @@ const DeleteOne = (req, res) => {
   }
 };
 
+const UpdateComment = (req, res) => {
+  let ErrMsg = [];
+
+  if (!req.body._id) {
+    ErrMsg.push("_id is required");
+  }
+
+  if (ErrMsg.length > 0) {
+    res.send({
+      status: 404,
+      message: ErrMsg,
+      success: false,
+    });
+  } else {
+    commentsModel
+      .findOne({ _id: req.body._id })
+      .then((ExistComment) => {
+        if (ExistComment == null) {
+          res.send({
+            status: 404,
+            message: "No Comment!",
+            success: false,
+          });
+        } else {
+          if (req.body.commentText) {
+            ExistComment.commentText = req.body.commentText;
+          }
+
+          ExistComment.save()
+            .then((data) => {
+              res.send({
+                status: 201,
+                message: "Comment Updated!🥳",
+                data: data,
+              });
+            })
+            .catch(() => {});
+        }
+      })
+      .catch((err) => {
+        res.send({
+          status: 500,
+          message: "Internal Server Error",
+          success: false,
+        });
+      });
+  }
+};
+
+const all = (req, res) => {
+  commentsModel
+    .find(req.body)
+    .then((ExistComment) => {
+      if (ExistComment == null) {
+        res.send({
+          status: 404,
+          message: "Comment Not Found",
+          success: false,
+        });
+      } else {
+        res.send({
+          status: 200,
+          message: "All Comments",
+          success: true,
+          totalComment: ExistComment.length,
+          data: ExistComment,
+        });
+      }
+    })
+    .catch((err) => {
+      res.send({
+        status: 500,
+        message: "Internal Server Error",
+        success: false,
+      });
+    });
+};
+
 module.exports = {
   add,
   single,
   DeleteOne,
+  UpdateComment,
+  all
 };

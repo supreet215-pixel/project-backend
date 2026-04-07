@@ -2,9 +2,9 @@ const mongoose = require ("mongoose")
 
 const investmentsSchema = new mongoose.Schema(
     {
-        investmentId:{type:String},
-        ideaId:{type:String},
-        investorId:{type:String},
+        investmentId:{type:mongoose.Schema.Types.ObjectId, ref:"investments"},
+        ideaId:{type:mongoose.Schema.Types.ObjectId, ref:"media"},
+        investorId:{type:mongoose.Schema.Types.ObjectId, ref:"invProfile"},
         amount:{type:String},
         equityPercent:{type:String},
         status:{type:Boolean},
