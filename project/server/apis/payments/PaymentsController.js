@@ -140,10 +140,10 @@ const UpdatePayment = (req, res) => {
           });
         } else {
           if (req.body.amount) {
-            ExistComment.amount = req.body.amount;
+            ExistPayment.amount = req.body.amount;
           }
           if (req.body.paymentMethod) {
-            ExistComment.paymentMethod = req.body.paymentMethod;
+            ExistPayment.paymentMethod = req.body.paymentMethod;
           }
 
           ExistPayment.save()

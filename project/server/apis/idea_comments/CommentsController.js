@@ -144,7 +144,13 @@ const UpdateComment = (req, res) => {
                 data: data,
               });
             })
-            .catch(() => {});
+            .catch(() => {
+              res.send({
+                status: 500,
+                message: "Internal Server Error",
+                success: false,
+              });
+            });
         }
       })
       .catch((err) => {
@@ -191,5 +197,5 @@ module.exports = {
   single,
   DeleteOne,
   UpdateComment,
-  all
+  all,
 };

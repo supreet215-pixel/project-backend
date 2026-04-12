@@ -1,4 +1,6 @@
 const userModel = require("../apis/users/UserModel");
+const bcrypt = require("bcrypt");
+
 
 module.exports = () => {
   userModel
@@ -9,7 +11,7 @@ module.exports = () => {
 
         ((userobj.name = "admin"),
           (userobj.email = "admin@gmail.com"),
-          (userobj.password = "1234"),
+          (userobj.password = bcrypt.hash("1234",10)),
           (userobj.userType = "1"),
           userobj
             .save()

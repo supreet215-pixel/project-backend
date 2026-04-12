@@ -3,12 +3,14 @@ const app = express();
 
 const db = require("./server/config/db");
 const adminSeeder = require("./server/config/seeder.js");
+var cors = require("cors")
 
 adminSeeder()
 
 // body - parser for req.body
 app.use(express.urlencoded());
 app.use(express.json());
+app.use(cors());
 
 // default route
 app.get("/", (req, res) => {

@@ -135,14 +135,14 @@ const UpdateAdminAction = (req, res) => {
         if (ExistAdminAction == null) {
           res.send({
             status: 404,
-            message: "No Payment exists!",
+            message: "No admin action done!",
             success: false,
           });
         } else {
-          if (req.body.amount) {
+          if (req.body.actionType) {
             ExistAdminAction.actionType = req.body.actionType;
           }
-          if (req.body.paymentMethod) {
+          if (req.body.reason) {
             ExistAdminAction.reason = req.body.reason;
           }
 

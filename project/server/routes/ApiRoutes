@@ -7,9 +7,12 @@ const PitchController = require("../apis/idea_pitch/PitchController")
 const PaymentsController = require("../apis/payments/PaymentsController")
 const AdminActionController = require("../apis/admin_action_log/AdminActionController")
 
-
-
 const router=require("express").Router()
+
+
+// cloudinary
+// const storage = multer.memoryStorage()
+// const upload = multer({ storage: storage })
 
 // login
 router.post("/Users/login",UserController.login)

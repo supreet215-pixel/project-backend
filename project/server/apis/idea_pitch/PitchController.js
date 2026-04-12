@@ -21,7 +21,13 @@ const add = (req, res) => {
         data: data,
       });
     })
-    .catch(() => {});
+    .catch(() => {
+      res.send({
+          status: 500,
+          message: "Internal Server Error",
+          success: false,
+        });
+    });
 };
 
 const single = (req, res) => {
@@ -139,25 +145,25 @@ const UpdatePitch = (req, res) => {
           });
         } else {
           if (req.body.title) {
-            ExistComment.title = req.body.title;
+            ExistPitch.title = req.body.title;
           }
           if (req.body.description) {
-            ExistComment.description = req.body.description;
+            ExistPitch.description = req.body.description;
           }
           if (req.body.category) {
-            ExistComment.category = req.body.category;
+            ExistPitch.category = req.body.category;
           }
           if (req.body.pitchVideoUrl) {
-            ExistComment.pitchVideoUrl = req.body.pitchVideoUrl;
+            ExistPitch.pitchVideoUrl = req.body.pitchVideoUrl;
           }
           if (req.body.targetAmount) {
-            ExistComment.targetAmount = req.body.targetAmount;
+            ExistPitch.targetAmount = req.body.targetAmount;
           }
           if (req.body.currentAmount) {
-            ExistComment.currentAmount = req.body.currentAmount;
+            ExistPitch.currentAmount = req.body.currentAmount;
           }
           if (req.body.aiScore) {
-            ExistComment.aiScore = req.body.aiScore;
+            ExistPitch.aiScore = req.body.aiScore;
           }
 
           ExistPitch.save()

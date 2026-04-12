@@ -134,10 +134,10 @@ const UpdateMedia = (req, res) => {
           });
         } else {
           if (req.body.mediaUrl) {
-            ExistComment.mediaUrl = req.body.mediaUrl;
+            ExistMedia.mediaUrl = req.body.mediaUrl;
           }
           if (req.body.mediaType) {
-            ExistComment.mediaType = req.body.mediaType;
+            ExistMedia.mediaType = req.body.mediaType;
           }
 
           ExistMedia.save()
@@ -148,7 +148,14 @@ const UpdateMedia = (req, res) => {
                 data: data,
               });
             })
-            .catch(() => {});
+            .catch((err) => {
+              res.send({
+                status: 500,
+                message: "Internal Server Error",
+                success: false,
+                err:err,
+              });
+            });
         }
       })
       .catch((err) => {
@@ -156,6 +163,7 @@ const UpdateMedia = (req, res) => {
           status: 500,
           message: "Internal Server Error",
           success: false,
+          err:err,
         });
       });
   }
@@ -195,5 +203,5 @@ module.exports = {
   single,
   DeleteOne,
   UpdateMedia,
-  all
+  all,
 };
