@@ -1,8 +1,9 @@
 const userModel = require("../users/UserModel");
-const invProfileModel = require("./InvProfileModel");
+const InvProfileModel = require("./InvProfileModel");
+
 const bcrypt = require("bcrypt");
 
-const register = (req, res) => {
+const InvesterRegister = (req, res) => {
   let errMsg = [];
 
   if (!req.body.name) {
@@ -33,20 +34,20 @@ const register = (req, res) => {
   } else {
     userModel
       .findOne({ email: req.body.email })
-      .then((userExists) => {
-        if (userExists == null) {
-          let userobj = new userModel();
-          userobj.name = req.body.name;
-          userobj.email = req.body.email;
-          ((userobj.password = bcrypt.hashSync(req.body.password, 10)),
-            (userobj.userType = "2"));
+      .then((invExists) => {
+        if (invExists == null) {
+          let invobj = new userModel();
+          invobj.name = req.body.name;
+          invobj.email = req.body.email;
+          ((invobj.password = bcrypt.hashSync(req.body.password, 10)),
+            (invobj.userType = "2"));
 
-          userobj
+          invobj
             .save()
             .then((data) => {
               console.log(data._id);
 
-              let invProfileobj = new invProfileModel();
+              let invProfileobj = new InvProfileModel();
               ((invProfileobj.country = req.body.country),
                 (invProfileobj.kycStatus = req.body.kycStatus),
                 (invProfileobj.userId = data._id),
@@ -54,7 +55,7 @@ const register = (req, res) => {
 
               invProfileobj.save().then((invProfile) => {
                 res.send({
-                  message: "Investers added successfully",
+                  message: "Invester added successfully",
                   status: 201,
                   success: true,
                   data: invProfile,
@@ -70,7 +71,7 @@ const register = (req, res) => {
             });
         } else {
           res.send({
-            massage: "User already exist",
+            massage: "Invester already exist",
             success: false,
             status: 403,
           });
@@ -88,5 +89,5 @@ const register = (req, res) => {
 };
 
 module.exports = {
-  register,
+  InvesterRegister,
 };

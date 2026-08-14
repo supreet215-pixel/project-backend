@@ -1,33 +1,120 @@
+const { uploadImg } = require("../../utilities/Helper");
 const pitchModel = require("./PitchModel");
 
 const add = (req, res) => {
   // console.log("HLo");
 
-  let pitchObj = new pitchModel();
-  pitchObj.title = req.body.title;
-  pitchObj.description = req.body.description;
-  pitchObj.category = req.body.category;
-  pitchObj.pitchVideoUrl = req.body.pitchVideoUrl;
-  pitchObj.targetAmount = req.body.targetAmount;
-  pitchObj.currentAmount = req.body.currentAmount;
-  pitchObj.aiScore = req.body.aiScore;
+  let errmsg = [];
 
-  pitchObj
-    .save()
-    .then((data) => {
-      res.send({
-        status: 201,
-        message: "Pitch Added!🥳",
-        data: data,
-      });
-    })
-    .catch(() => {
-      res.send({
+  if (!req.body.title) {
+    errmsg.push("Title is required");
+  }
+  if (!req.body.description) {
+    errmsg.push("Description is required");
+  }
+  if (!req.body.category) {
+    errmsg.push("Category is required");
+  }
+  if (!req.body.targetAmount) {
+    errmsg.push("TargetAmount is required");
+  }
+  if (!req.body.currentAmount) {
+    errmsg.push("CurrentAmount is required");
+  }
+  if (!req.body.aiScore) {
+    errmsg.push("AiScore is required");
+  }
+
+  if (!req.file) {
+    return res.send({
+      status: 201,
+      message: "Pitch video url is required",
+      success: false,
+    });
+  }
+  if (errmsg.length > 0) {
+    res.send({
+      success: false,
+      status: 400,
+      message: errmsg,
+    });
+  } else {
+    pitchModel
+      .findOne({ title: req.body.title })
+      .then(async (Data) => {
+        if (Data == null) {
+          let pitchObj = new pitchModel();
+
+          pitchObj.title = req.body.title;
+          pitchObj.description = req.body.description;
+          pitchObj.category = req.body.category;
+          pitchObj.targetAmount = req.body.targetAmount;
+          pitchObj.currentAmount = req.body.currentAmount;
+          pitchObj.aiScore = req.body.aiScore;
+          // pitchObj.image = req.body.image;
+
+          try {
+            let url = await uploadImg(req.file.buffer);
+            pitchObj.pitchVideoUrl = url;
+          } catch (err) {
+            console.log(err);
+
+            return res.send({
+              success: false,
+              status: 403,
+              message: "Cloudinary error😕",
+              err: err,
+            });
+          }
+
+          // console.log(pitchObj);
+
+          pitchObj.save().then((data) => {
+            res.send({
+              status: 201,
+              success:true,
+              message: "Pitch Added!🥳",
+              data: data,
+            });
+          });
+        }
+      })
+      .catch(() => {
+        res.send({
           status: 500,
           message: "Internal Server Error",
           success: false,
         });
-    });
+      });
+  }
+
+  // let pitchObj = new pitchModel();
+  // pitchObj.title = req.body.title;
+  // pitchObj.description = req.body.description;
+  // pitchObj.category = req.body.category;
+  // pitchObj.pitchVideoUrl = req.body.pitchVideoUrl;
+  // pitchObj.targetAmount = req.body.targetAmount;
+  // pitchObj.currentAmount = req.body.currentAmount;
+  // pitchObj.aiScore = req.body.aiScore;
+
+  // pitchObj
+  //   .save()
+  //   .then((data) => {
+  //     console.log(data);
+
+  //     res.send({
+  //       status: 201,
+  //       message: "Pitch Added!🥳",
+  //       data: data,
+  //     });
+  //   })
+  //   .catch(() => {
+  //     res.send({
+  //         status: 500,
+  //         message: "Internal Server Error",
+  //         success: false,
+  //       });
+  //   });
 };
 
 const single = (req, res) => {
@@ -179,7 +266,7 @@ const UpdatePitch = (req, res) => {
                 status: 500,
                 message: "Internal Server Error",
                 success: false,
-                error:err
+                error: err,
               });
             });
         }
@@ -189,7 +276,7 @@ const UpdatePitch = (req, res) => {
           status: 500,
           message: "Internal Server Error",
           success: false,
-          error:err
+          error: err,
         });
       });
   }
@@ -198,6 +285,8 @@ const UpdatePitch = (req, res) => {
 const all = (req, res) => {
   pitchModel
     .find(req.body)
+    .populate("category")
+    .populate("ownerId")
     .then((ExistPitch) => {
       if (ExistPitch == null) {
         res.send({
@@ -220,7 +309,7 @@ const all = (req, res) => {
         status: 500,
         message: "Internal Server Error",
         success: false,
-        error:err
+        error: err,
       });
     });
 };

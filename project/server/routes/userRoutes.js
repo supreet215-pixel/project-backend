@@ -1,3 +1,6 @@
+const cloudinary = require("cloudinary")
+const multer =require("multer")
+const UserProfileController = require("../apis/user_profile/UserProfileController")
 const InvProfileController= require("../apis/investor_profile/InvProfileController")
 const UserController= require("../apis/users/UsersController")
 const CommentsController = require("../apis/idea_comments/CommentsController")
@@ -6,15 +9,22 @@ const InvestmentsController = require("../apis/investments/InvestmentsController
 const PitchController = require("../apis/idea_pitch/PitchController")
 const PaymentsController = require("../apis/payments/PaymentsController")
 // const AdminActionController = require("../apis/admin_action_log/AdminActionController")
+const CategoryController = require("../apis/category/CategoryController")
 
 
 
 const router=require("express").Router()
 
+
+// cloudinary
+const storage = multer.memoryStorage()
+const upload = multer({ storage: storage })
+
 // login
 router.post("/Users/login",UserController.login)
 // register
-router.post("/InvProfile/register",InvProfileController.register)
+router.post("/InvProfile/register",InvProfileController.InvesterRegister)
+router.post("/UserProfile/register",UserProfileController.UserRegister)
 
 
 // token checker
@@ -42,7 +52,7 @@ router.post("/Investments/all",InvestmentsController.all)
 // router.post("/Investments/UpdateInvestments",InvestmentsController.UpdateInvestment)
 
 // pitch
-router.post("/Pitch/add",PitchController.add)
+router.post("/Pitch/add",upload.single("pitchVideoUrl"),PitchController.add)
 router.post("/Pitch/single",PitchController.single)
 router.post("/Pitch/DeleteOne",PitchController.DeleteOne)
 router.post("/Pitch/all",PitchController.all)
@@ -61,6 +71,9 @@ router.post("/Payments/all",PaymentsController.all)
 // router.post("/AdminAction/DeleteOne",AdminActionController.DeleteOne)
 // router.post("/AdminAction/all",AdminActionController.all)
 // router.post("/AdminAction/UpdateAdminAction",AdminActionController.UpdateAdminAction)
+
+router.post("/Category/all",CategoryController.all)
+
 
 
 

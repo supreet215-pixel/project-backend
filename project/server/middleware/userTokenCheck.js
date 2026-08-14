@@ -15,8 +15,8 @@ module.exports = (req, res, next) => {
         err: err,
       });
     } else {
-      console.log("decoded", decoded);
-      if (decoded.userType == "2") {
+      console.log("decoded", decoded.userType);
+      if (decoded.userType == "3") {
         req.decoded=decoded
 
         next();

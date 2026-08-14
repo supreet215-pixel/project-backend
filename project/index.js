@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 
 const db = require("./server/config/db");
-const adminSeeder = require("./server/config/seeder.js");
+// const adminSeeder = require("./server/config/seeder.js");
+const adminSeeder = require("./server/config/seeder.js")
 var cors = require("cors")
 
 adminSeeder()
@@ -19,9 +20,11 @@ app.get("/", (req, res) => {
 
 const apiroutes = require("./server/routes/Apiroutes");
 const userRoute = require("./server/routes/userRoutes.js");
+const investorRoute = require("./server/routes/investorRoutes.js")
 
 app.use("/apis", apiroutes);
 app.use("/user", userRoute);
+app.use("/investor", investorRoute);
 
 // for app listening
 app.listen(3000, () => {

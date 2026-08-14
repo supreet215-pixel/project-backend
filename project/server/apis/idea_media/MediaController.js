@@ -16,7 +16,13 @@ const add = (req, res) => {
         data: data,
       });
     })
-    .catch(() => {});
+    .catch(() => {
+      res.send({
+          status: 500,
+          message: "Internal Server Error",
+          success: false,
+        });
+    });
 };
 
 const single = (req, res) => {
