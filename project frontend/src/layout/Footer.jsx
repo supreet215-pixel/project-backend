@@ -12,11 +12,10 @@ function Footer() {
               <div className="col-lg-3 col-md-6">
                 <div className="footer-item">
                   <h1 className="text-primary">
-                    Cater<span className="text-dark">Serv</span>
+                    Idea<span className="text-dark">Fund</span>
                   </h1>
                   <p className="lh-lg mb-4">
-                    There cursus massa at urnaaculis estieSed aliquamellus vitae
-                    ultrs condmentum leo massamollis its estiegittis miristum.
+                    IdeaFund is a crowdfunding platform that connects innovative ideas with people who believe in them and want to make an impact.
                   </p>
                   <div className="footer-icon d-flex">
                     <a
@@ -46,25 +45,25 @@ function Footer() {
                   </div>
                 </div>
               </div>
-              <div className="col-lg-3 col-md-6">
+              <div className="col-lg-3 col-md-6 ms-5">
                 <div className="footer-item">
-                  <h4 className="mb-4">Special Facilities</h4>
+                  <h4 className="mb-4">Quick Links</h4>
                   <div className="d-flex flex-column align-items-start">
                     <a className="text-body mb-3" href="">
                       <i className="fa fa-check text-primary me-2" />
-                      Cheese Burger
+                      Home
                     </a>
                     <a className="text-body mb-3" href="">
                       <i className="fa fa-check text-primary me-2" />
-                      Sandwich
+                      Explore Projects
                     </a>
                     <a className="text-body mb-3" href="">
                       <i className="fa fa-check text-primary me-2" />
-                      Panner Burger
+                      Start a Campaign
                     </a>
                     <a className="text-body mb-3" href="">
                       <i className="fa fa-check text-primary me-2" />
-                      Special Sweets
+                      About Us
                     </a>
                   </div>
                 </div>
@@ -75,69 +74,19 @@ function Footer() {
                   <div className="d-flex flex-column align-items-start">
                     <p>
                       <i className="fa fa-map-marker-alt text-primary me-2" />{" "}
-                      123 Street, New York, USA
+                      Punjab, India
                     </p>
                     <p>
-                      <i className="fa fa-phone-alt text-primary me-2" /> (+012)
-                      3456 7890 123
+                      <i className="fa fa-phone-alt text-primary me-2" /> 
+                      +91 XXXXX XXXXX
                     </p>
                     <p>
                       <i className="fas fa-envelope text-primary me-2" />{" "}
                       info@example.com
                     </p>
                     <p>
-                      <i className="fa fa-clock text-primary me-2" /> 26/7 Hours
-                      Service
+                      <i className="fa fa-clock text-primary me-2" /> 24/7 Support
                     </p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6">
-                <div className="footer-item">
-                  <h4 className="mb-4">Social Gallery</h4>
-                  <div className="row g-2">
-                    <div className="col-4">
-                      <img
-                        src="img/menu-01.jpg"
-                        className="img-fluid rounded-circle border border-primary p-2"
-                        alt=""
-                      />
-                    </div>
-                    <div className="col-4">
-                      <img
-                        src="img/menu-02.jpg"
-                        className="img-fluid rounded-circle border border-primary p-2"
-                        alt=""
-                      />
-                    </div>
-                    <div className="col-4">
-                      <img
-                        src="img/menu-03.jpg"
-                        className="img-fluid rounded-circle border border-primary p-2"
-                        alt=""
-                      />
-                    </div>
-                    <div className="col-4">
-                      <img
-                        src="img/menu-04.jpg"
-                        className="img-fluid rounded-circle border border-primary p-2"
-                        alt=""
-                      />
-                    </div>
-                    <div className="col-4">
-                      <img
-                        src="img/menu-05.jpg"
-                        className="img-fluid rounded-circle border border-primary p-2"
-                        alt=""
-                      />
-                    </div>
-                    <div className="col-4">
-                      <img
-                        src="img/menu-06.jpg"
-                        className="img-fluid rounded-circle border border-primary p-2"
-                        alt=""
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
@@ -153,23 +102,10 @@ function Footer() {
                 <span className="text-light">
                   <a href="#">
                     <i className="fas fa-copyright text-light me-2" />
-                    Your Site Name
+                    IdeaFund
                   </a>
                   , All right reserved.
                 </span>
-              </div>
-              <div className="col-md-6 my-auto text-center text-md-end text-white">
-                {/*/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. *** /*/}
-                {/*/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, *** /*/}
-                {/*/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". *** /*/}
-                Designed By{" "}
-                <a className="border-bottom" href="https://htmlcodex.com">
-                  HTML Codex
-                </a>{" "}
-                Distributed By{" "}
-                <a className="border-bottom" href="https://themewagon.com">
-                  ThemeWagon
-                </a>
               </div>
             </div>
           </div>
