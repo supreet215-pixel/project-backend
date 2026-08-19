@@ -84,16 +84,13 @@ const PitchDetail = () => {
               <img src={pitchVideoUrl} className="img-fluid rounded" alt="" />
             </div>
             <div className="col-lg-7 wow bounceInUp" data-wow-delay="0.3s">
-              <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">
-                About Us
-              </small>  
-              <h1 className="display-5 mb-4">
+              <h1 className="display-5 mb-2">
                 {title}
               </h1>
-              <p className="mb-4">
+              <p className="mb-3">
                 {description}
               </p>
-              <div className="row g-4 text-dark mb-5">
+              <div className="row g-4 text-dark mb-4">
                 <div className="col-sm-6">
                   <i className="fas fa-share text-primary me-2" />
                   Current Amount: {currentAmount}
@@ -118,6 +115,14 @@ const PitchDetail = () => {
               className="btn btn-primary py-3 px-5 rounded-pill">
                 Get Investment Suggestion
                 <i className="fas fa-arrow-right ps-2" />
+              </button>
+
+              <button
+                onClick={()=>
+                  navigate(`/investor/InvestmentPage`)
+                }
+                className="btn btn-primary py-3 px-5 rounded-pill">
+                Invest Now
               </button>
             </div>
           </div>

@@ -21,6 +21,7 @@ import InvestorMaster from "./layout/investorLayout/Master";
 import InvestorDashboard from "./components/investor/InvestorDashboard";
 import ViewPitch from "./components/investor/ViewPitch";
 import PitchDetail from "./components/investor/PitchDetail";
+import InvestmentPage from "./components/investor/InvestmentPage";
 
 
 
@@ -57,6 +58,7 @@ function App() {
             <Route index element={<InvestorDashboard />} />
             <Route path="/investor/viewPitch" element={<ViewPitch />} />
             <Route path="/investor/pitchDetail/:_id" element={<PitchDetail />} />
+            <Route path="/investor/InvestmentPage" element={<InvestmentPage />} />
             
           </Route>
 

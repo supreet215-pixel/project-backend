@@ -136,7 +136,7 @@ const Login = () => {
           </div>
         </div>
         {/* Hero End */}
-        {/* Contact Start */}
+        {/*Start */}
         <div
           className="container-fluid contact py-6 wow bounceInUp"
           data-wow-delay="0.1s"
@@ -226,7 +226,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-        {/* Contact End */}
+        {/*End */}
       </>
     </>
   );
