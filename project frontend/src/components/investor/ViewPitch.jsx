@@ -115,7 +115,7 @@ const ViewPitch = () => {
                           navigate(`/investor/pitchDetail/${el._id}`)
                         }
                       >
-                        Read More
+                        Explore More
                       </button>
                     </div>
                   </div>

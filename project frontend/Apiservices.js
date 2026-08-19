@@ -74,5 +74,10 @@ class Apiservices {
   GetPitch(data) {
     return axios.post(investor + "Pitch/single", data, this.getToken());
   }
+//////////////////////////////////////////AI CALL/////////////////////////////////////
+  getSuggestion(data){
+    return axios.post(investor+"getSuggestion",data,this.getToken())
+  }
+
 }
 export default new Apiservices();

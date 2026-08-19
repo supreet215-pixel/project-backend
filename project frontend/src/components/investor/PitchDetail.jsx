@@ -16,12 +16,14 @@ const PitchDetail = () => {
   const [targetAmount, setTargetAmount] = useState("");
   const [currentAmount, setCurrentAmount] = useState("");
   const [aiScore, setAiScore] = useState("");
+  const [data, setData] = useState();
 
   const getPitch = async () => {
     try {
       const res = await Apiservices.GetPitch({ _id: _id });
 
       if (res.data.success) {
+        setData(res.data.data)
         setTitle(res.data.data.title);
         setDescription(res.data.data.description);
         setCategory(res.data.data.category);
@@ -36,6 +38,16 @@ const PitchDetail = () => {
       console.log(err);
     }
   };
+
+  const getSuggestion = () => {
+      Apiservices.getSuggestion({prompt:data})
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
 
   useEffect(() => {
     getPitch();
@@ -99,10 +111,14 @@ const PitchDetail = () => {
                   Delicious Deals for Delicious Meals
                 </div>
               </div>
-              <a href="" className="btn btn-primary py-3 px-5 rounded-pill">
-                About Us
+              <button  
+              onClick={()=>
+                 getSuggestion()
+              }
+              className="btn btn-primary py-3 px-5 rounded-pill">
+                Get Investment Suggestion
                 <i className="fas fa-arrow-right ps-2" />
-              </a>
+              </button>
             </div>
           </div>
         </div>

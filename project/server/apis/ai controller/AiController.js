@@ -27,6 +27,8 @@ const main = async (req, res) => {
         success: true,
       });
     } catch (err) {
+      console.log(err);
+      
       res.send({
         message: err,
         status: 500,

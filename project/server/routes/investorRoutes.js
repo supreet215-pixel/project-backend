@@ -10,6 +10,7 @@ const PitchController = require("../apis/idea_pitch/PitchController")
 const PaymentsController = require("../apis/payments/PaymentsController")
 // const AdminActionController = require("../apis/admin_action_log/AdminActionController")
 const CategoryController = require("../apis/category/CategoryController")
+const AiController = require("../apis/ai controller/AiController")
 
 
 
@@ -63,6 +64,7 @@ router.post("/Payments/add",PaymentsController.add)
 router.post("/Payments/single",PaymentsController.single)
 router.post("/Payments/DeleteOne",PaymentsController.DeleteOne)
 router.post("/Payments/all",PaymentsController.all)
+router.post("/getSuggestion",AiController.main)
 // router.post("/Payments/UpdatePayments",PaymentsController.UpdatePayment)
 
 // Admin Action
