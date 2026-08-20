@@ -62,7 +62,7 @@ function Header() {
               
             </div>
           </div> */}
-                <Link to={"/"} className="nav-item nav-link">
+                <Link to={"/contact"} className="nav-item nav-link">
                   Contact
                 </Link>
               </div>
