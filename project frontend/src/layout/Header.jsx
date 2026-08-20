@@ -21,10 +21,10 @@ function Header() {
             </button>
             <div className="collapse navbar-collapse" id="navbarCollapse">
               <div className="navbar-nav mx-auto">
-                <a href="about.html" className="nav-item nav-link">
+                <a href="/home" className="nav-item nav-link">
                   Home
                 </a>
-                <a href="about.html" className="nav-item nav-link">
+                <a href="/about" className="nav-item nav-link">
                   About
                 </a>
                 <a href="service.html" className="nav-item nav-link">
@@ -62,7 +62,7 @@ function Header() {
                     </a>
                   </div>
                 </div> */}
-                <a href="contact.html" className="nav-item nav-link">
+                <a href="/contact" className="nav-item nav-link">
                   Contact
                 </a>
               </div>

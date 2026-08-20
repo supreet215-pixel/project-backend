@@ -76,7 +76,7 @@ function Home() {
           </div>
         </div>
         {/* Hero End */}
-        {/* About Satrt */}
+        {/* About Start */}
         <div className="container-fluid py-3">
           <div className="container">
             <div className="row g-5 align-items-center">
