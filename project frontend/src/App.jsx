@@ -63,6 +63,7 @@ function App() {
             <Route path="/user/addPitch" element={<AddPitch />} />
             <Route path="/user/managePitch" element={<ManagePitch />} />
             <Route path="/user/manageInvestments" element={<ManageInvestments />} />
+            <Route path="/user/contact" element={<Contact />} />
           </Route>
 
           {/* investor */}
@@ -72,6 +73,7 @@ function App() {
             <Route path="/investor/pitchDetail/:_id" element={<PitchDetail />} />
             <Route path="/investor/InvestmentPage" element={<InvestmentPage />} />
             <Route path="/investor/manageInvestments" element={<MyInvestments />} />
+            <Route path="/investor/contact" element={<Contact />} />
           </Route>
 
         </Routes>

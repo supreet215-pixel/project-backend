@@ -36,7 +36,9 @@ const MyInvestments = () => {
 
   const handleRazorpayPayment = (investment) => {
     if (!window.Razorpay) {
-      toast.error("Razorpay SDK failed to load. Please check your internet connection.");
+      toast.error(
+        "Razorpay SDK failed to load. Please check your internet connection.",
+      );
       return;
     }
 
@@ -71,8 +73,8 @@ const MyInvestments = () => {
                         paymentId: paymentId,
                         paymentDate: new Date(),
                       }
-                    : item
-                )
+                    : item,
+                ),
               );
               // Show receipt
               setSelectedReceipt({
@@ -105,7 +107,9 @@ const MyInvestments = () => {
 
     const rzp = new window.Razorpay(options);
     rzp.on("payment.failed", function (response) {
-      toast.error(`Payment failed: ${response.error.description || "Transaction cancelled"}`);
+      toast.error(
+        `Payment failed: ${response.error.description || "Transaction cancelled"}`,
+      );
     });
     rzp.open();
   };
@@ -113,14 +117,30 @@ const MyInvestments = () => {
   const getStatusBadge = (status) => {
     switch (status?.toLowerCase()) {
       case "paid":
-        return <span className="badge bg-success px-3 py-2 rounded-pill"><i className="fas fa-check-circle me-1"></i>Paid & Completed</span>;
+        return (
+          <span className="badge bg-success px-3 py-2 rounded-pill">
+            <i className="fas fa-check-circle me-1"></i>Paid & Completed
+          </span>
+        );
       case "approved":
-        return <span className="badge bg-primary px-3 py-2 rounded-pill"><i className="fas fa-thumbs-up me-1"></i>Approved (Awaiting Payment)</span>;
+        return (
+          <span className="badge bg-primary px-3 py-2 rounded-pill">
+            <i className="fas fa-thumbs-up me-1"></i>Approved (Awaiting Payment)
+          </span>
+        );
       case "rejected":
-        return <span className="badge bg-danger px-3 py-2 rounded-pill"><i className="fas fa-times-circle me-1"></i>Offer Rejected</span>;
+        return (
+          <span className="badge bg-danger px-3 py-2 rounded-pill">
+            <i className="fas fa-times-circle me-1"></i>Offer Rejected
+          </span>
+        );
       case "pending":
       default:
-        return <span className="badge bg-warning text-dark px-3 py-2 rounded-pill"><i className="fas fa-clock me-1"></i>Under Founder Review</span>;
+        return (
+          <span className="badge bg-warning text-dark px-3 py-2 rounded-pill">
+            <i className="fas fa-clock me-1"></i>Under Founder Review
+          </span>
+        );
     }
   };
 
@@ -143,21 +163,48 @@ const MyInvestments = () => {
     .filter((i) => i.status?.toLowerCase() === "paid")
     .reduce((sum, i) => sum + (Number(i.amount) || 0), 0);
 
-  const pendingOffers = investments.filter((i) => !i.status || i.status.toLowerCase() === "pending").length;
-  const approvedOffers = investments.filter((i) => i.status?.toLowerCase() === "approved").length;
-  const completedOffers = investments.filter((i) => i.status?.toLowerCase() === "paid").length;
+  const pendingOffers = investments.filter(
+    (i) => !i.status || i.status.toLowerCase() === "pending",
+  ).length;
+  const approvedOffers = investments.filter(
+    (i) => i.status?.toLowerCase() === "approved",
+  ).length;
+  const completedOffers = investments.filter(
+    (i) => i.status?.toLowerCase() === "paid",
+  ).length;
 
   return (
-    <div className="container py-5">
+    <>
+    {/* Hero Start */}
+      <div className="container-fluid bg-light py-4 my-4 mt-4">
+        <div className="container text-center animated bounceInDown">
+          <h1 className="display-1 mb-4">Investments</h1>
+          <ol className="breadcrumb justify-content-center mb-0 animated bounceInDown">
+            <li className="breadcrumb-item">
+              <a href="#">Home</a>
+            </li>
+            <li className="breadcrumb-item text-dark" aria-current="page">
+              Investments
+            </li>
+          </ol>
+        </div>
+      </div>
+      {/* Hero End */}
+    
+    <div className="container py-3">
       {/* Header */}
       <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3 animated bounceInDown">
         <div>
           <h1 className="display-5 mb-1">My Investments</h1>
           <p className="text-muted mb-0">
-            Track your funding proposals, review founder approvals, and complete payments securely.
+            Track your funding proposals, review founder approvals, and complete
+            payments securely.
           </p>
         </div>
-        <Link to="/investor/InvestmentPage" className="btn btn-primary rounded-pill px-4 py-2 fw-semibold">
+        <Link
+          to="/investor/InvestmentPage"
+          className="btn btn-primary rounded-pill px-4 py-2 fw-semibold"
+        >
           <i className="fas fa-plus me-2"></i>New Investment Offer
         </Link>
       </div>
@@ -167,7 +214,9 @@ const MyInvestments = () => {
         <div className="col-md-3 col-sm-6">
           <div className="card border-0 shadow-sm rounded-4 p-3 text-center bg-white h-100">
             <h6 className="text-muted small mb-1">Total Deployed Capital</h6>
-            <h3 className="fw-bold text-success mb-0">₹{totalInvested.toLocaleString()}</h3>
+            <h3 className="fw-bold text-success mb-0">
+              ₹{totalInvested.toLocaleString()}
+            </h3>
           </div>
         </div>
         <div className="col-md-3 col-sm-6">
@@ -221,7 +270,10 @@ const MyInvestments = () => {
             </select>
           </div>
           <div className="col-md-2 text-md-end">
-            <button className="btn btn-outline-primary w-100" onClick={fetchMyInvestments}>
+            <button
+              className="btn btn-outline-primary w-100"
+              onClick={fetchMyInvestments}
+            >
               <i className="fas fa-sync-alt me-2"></i>Refresh
             </button>
           </div>
@@ -243,7 +295,10 @@ const MyInvestments = () => {
               ? `No investment matches for "${searchTerm}"`
               : "You have not submitted any investment offers yet."}
           </p>
-          <Link to="/investor/viewPitch" className="btn btn-primary rounded-pill px-4 mx-auto">
+          <Link
+            to="/investor/viewPitch"
+            className="btn btn-primary rounded-pill px-4 mx-auto"
+          >
             <i className="fas fa-compass me-2"></i>Explore Pitches
           </Link>
         </div>
@@ -287,7 +342,9 @@ const MyInvestments = () => {
                         )}
                         <span className="text-muted small">
                           <i className="fas fa-calendar-alt me-1"></i>
-                          {item.created_at ? new Date(item.created_at).toLocaleDateString() : "Recent"}
+                          {item.created_at
+                            ? new Date(item.created_at).toLocaleDateString()
+                            : "Recent"}
                         </span>
                       </div>
 
@@ -298,7 +355,8 @@ const MyInvestments = () => {
                       <div className="row g-2 text-muted small mt-1">
                         <div className="col-6">
                           <i className="fas fa-wallet text-primary me-2"></i>
-                          <strong>Offered:</strong> ₹{Number(item.amount).toLocaleString()}
+                          <strong>Offered:</strong> ₹
+                          {Number(item.amount).toLocaleString()}
                         </div>
                         <div className="col-6">
                           <i className="fas fa-chart-pie text-info me-2"></i>
@@ -307,7 +365,8 @@ const MyInvestments = () => {
                         {pitch.ownerId && (
                           <div className="col-12">
                             <i className="fas fa-user text-secondary me-2"></i>
-                            <strong>Founder:</strong> {pitch.ownerId.name} ({pitch.ownerId.email})
+                            <strong>Founder:</strong> {pitch.ownerId.name} (
+                            {pitch.ownerId.email})
                           </div>
                         )}
                       </div>
@@ -325,10 +384,12 @@ const MyInvestments = () => {
                             className="btn btn-success btn-lg rounded-pill px-4 py-2 fw-bold shadow-sm w-100"
                           >
                             <i className="fas fa-credit-card me-2"></i>
-                            Pay ₹{Number(item.amount).toLocaleString()} with Razorpay
+                            Pay ₹{Number(item.amount).toLocaleString()} with
+                            Razorpay
                           </button>
                           <div className="small text-muted mt-1 text-center">
-                            <i className="fas fa-lock text-success me-1"></i>Founder approved your offer
+                            <i className="fas fa-lock text-success me-1"></i>
+                            Founder approved your offer
                           </div>
                         </div>
                       )}
@@ -339,7 +400,8 @@ const MyInvestments = () => {
                           onClick={() => setSelectedReceipt(item)}
                           className="btn btn-outline-dark rounded-pill px-4 btn-sm"
                         >
-                          <i className="fas fa-receipt me-1"></i>View Payment Receipt
+                          <i className="fas fa-receipt me-1"></i>View Payment
+                          Receipt
                         </button>
                       )}
 
@@ -349,7 +411,8 @@ const MyInvestments = () => {
                           to={`/investor/pitchDetail/${pitch._id}`}
                           className="text-primary small text-decoration-none"
                         >
-                          View Pitch Details <i className="fas fa-arrow-right ms-1"></i>
+                          View Pitch Details{" "}
+                          <i className="fas fa-arrow-right ms-1"></i>
                         </Link>
                       </div>
                     </div>
@@ -396,11 +459,15 @@ const MyInvestments = () => {
                 <div className="list-group list-group-flush rounded-3 text-start mb-3">
                   <div className="list-group-item d-flex justify-content-between py-2">
                     <span className="text-muted">Idea Pitch</span>
-                    <strong className="text-end">{selectedReceipt.pitchId?.title}</strong>
+                    <strong className="text-end">
+                      {selectedReceipt.pitchId?.title}
+                    </strong>
                   </div>
                   <div className="list-group-item d-flex justify-content-between py-2">
                     <span className="text-muted">Invested Amount</span>
-                    <strong className="text-success">₹{Number(selectedReceipt.amount).toLocaleString()}</strong>
+                    <strong className="text-success">
+                      ₹{Number(selectedReceipt.amount).toLocaleString()}
+                    </strong>
                   </div>
                   <div className="list-group-item d-flex justify-content-between py-2">
                     <span className="text-muted">Equity Allocated</span>
@@ -408,7 +475,9 @@ const MyInvestments = () => {
                   </div>
                   <div className="list-group-item d-flex justify-content-between py-2">
                     <span className="text-muted">Razorpay Payment ID</span>
-                    <code className="text-primary">{selectedReceipt.paymentId || "rzp_simulated"}</code>
+                    <code className="text-primary">
+                      {selectedReceipt.paymentId || "rzp_simulated"}
+                    </code>
                   </div>
                   <div className="list-group-item d-flex justify-content-between py-2">
                     <span className="text-muted">Date</span>
@@ -434,6 +503,7 @@ const MyInvestments = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

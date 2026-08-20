@@ -4,8 +4,11 @@ import { toast, Zoom } from "react-toastify";
 // import Apiservices from "../../Apiservices";
 import { Link } from "react-router-dom";
 import { invRegister } from "../services/auth";
+import { useNavigate } from "react-router-dom";
 
 const InvRegister = () => {
+  const navigate = useNavigate();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,6 +37,7 @@ const InvRegister = () => {
 
         if (res.data.success) {
           toast.success("Investor Added");
+          navigate("/investor")
         } else {
           toast.warning(res.data.massage);
         }

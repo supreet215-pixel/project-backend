@@ -4,11 +4,15 @@ import { toast, Zoom } from "react-toastify";
 // import Apiservices from "../../../Apiservices";
 import { HashLoader } from "react-spinners";
 import { addCategory } from "../../services/category";
+import { useNavigate } from "react-router-dom";
 
 const AddCategory = () => {
+  const navigate = useNavigate();
+
   const [categoryName, setCategoryName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setimage] = useState();
+
 
   const [loading, setLoading] = useState(false);
 
@@ -39,6 +43,7 @@ const AddCategory = () => {
 
         if (res.data.success) {
           toast.success("Category Added🥳");
+          navigate("/admin/manageCategory")
         } else {
           toast.warning(res.data.message);
         }
@@ -122,16 +127,6 @@ const AddCategory = () => {
                 <h1 className="display-5 mb-0 text-center">Add Category</h1>
               </div>
               <div className="col-md-6 col-lg-7">
-                {/* <p className="mb-4">
-                    The contact form is currently inactive. Get a functional and
-                    working contact form with Ajax &amp; PHP in a few minutes.
-                    Just copy and paste the files, add a little code and you're
-                    done.{" "}
-                    <a href="https://htmlcodex.com/contact-form">
-                      Download Now
-                    </a>
-                    .
-                  </p> */}
                 <form onSubmit={handleForm}>
                   <input
                     type="text"
@@ -160,6 +155,7 @@ const AddCategory = () => {
                     }}
                   />
                   <button
+                  
                     className="w-100 btn btn-primary form-control p-3 border-primary bg-primary rounded-pill"
                     type="submit"
                   >
@@ -167,33 +163,6 @@ const AddCategory = () => {
                   </button>
                 </form>
               </div>
-              {/* {/* {/* <div className="col-md-6 col-lg-5">
-                  <div>
-                    <div className="d-inline-flex w-100 border border-primary p-4 rounded mb-4">
-                      <i className="fas fa-map-marker-alt fa-2x text-primary me-4" />
-                      <div className="">
-                        <h4>Address</h4>
-                        <p>123 Street, New York, USA</p>
-                      </div>
-                    </div>
-                    <div className="d-inline-flex w-100 border border-primary p-4 rounded mb-4">
-                      <i className="fas fa-envelope fa-2x text-primary me-4" />
-                      <div className="">
-                        <h4>Mail Us</h4>
-                        <p className="mb-2">info@example.com</p>
-                        <p className="mb-0">support@example.com</p>
-                      </div>
-                    </div>
-                    <div className="d-inline-flex w-100 border border-primary p-4 rounded">
-                      <i className="fa fa-phone-alt fa-2x text-primary me-4" />
-                      <div className="">
-                        <h4>Telephone</h4>
-                        <p className="mb-2">(+012) 3456 7890 123</p>
-                        <p className="mb-0">(+704) 5555 0127 296</p>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
             </div>
           </div>
         </div>

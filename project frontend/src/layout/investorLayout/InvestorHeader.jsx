@@ -21,7 +21,7 @@ function Header() {
             </button>
             <div className="collapse navbar-collapse" id="navbarCollapse">
               <div className="navbar-nav mx-auto">
-                <Link to={"/"} className="nav-item nav-link">
+                <Link to={"/investor"} className="nav-item nav-link">
                   Home
                 </Link>
                 <Link to={"/investor/viewPitch"} className="nav-item nav-link">
@@ -33,39 +33,7 @@ function Header() {
                 <Link to={"/investor/InvestmentPage"} className="nav-item nav-link">
                   Invest
                 </Link>
-                {/* <link href="event.html" className="nav-item nav-link"/>
-            Events
-          
-          <link href="menu.html" className="nav-item nav-link"/>
-            Menu
-          
-          <div className="nav-item dropdown">
-            <link
-              href="#"
-              className="nav-link dropdown-toggle"
-              data-bs-toggle="dropdown"
-            />
-              Pages
-            
-            <div className="dropdown-menu bg-light">
-              <link href="book.html" className="dropdown-item"/>
-                Booking
-              
-              <link href="blog.html" className="dropdown-item"/>
-                Our Blog
-              
-              <link href="team.html" className="dropdown-item"/>
-                Our Team
-              
-              <link href="testimonial.html" className="dropdown-item"/>
-                Testimonial
-              
-              <link href="404.html" className="dropdown-item"/>
-                404 Page
-              
-            </div>
-          </div> */}
-                <Link to={"/"} className="nav-item nav-link">
+                <Link to={"/investor/contact"} className="nav-item nav-link">
                   Contact
                 </Link>
               </div>

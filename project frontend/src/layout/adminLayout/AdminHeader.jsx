@@ -36,38 +36,6 @@ function Header() {
                 <Link to={"/admin/manageInvestors"} className="nav-item nav-link">
                   Manage Investors
                 </Link>
-                {/* <link href="event.html" className="nav-item nav-link"/>
-            Events
-          
-          <link href="menu.html" className="nav-item nav-link"/>
-            Menu
-          
-          <div className="nav-item dropdown">
-            <link
-              href="#"
-              className="nav-link dropdown-toggle"
-              data-bs-toggle="dropdown"
-            />
-              Pages
-            
-            <div className="dropdown-menu bg-light">
-              <link href="book.html" className="dropdown-item"/>
-                Booking
-              
-              <link href="blog.html" className="dropdown-item"/>
-                Our Blog
-              
-              <link href="team.html" className="dropdown-item"/>
-                Our Team
-              
-              <link href="testimonial.html" className="dropdown-item"/>
-                Testimonial
-              
-              <link href="404.html" className="dropdown-item"/>
-                404 Page
-              
-            </div>
-          </div> */}
                 <Link to={"/contact"} className="nav-item nav-link">
                   Contact
                 </Link>

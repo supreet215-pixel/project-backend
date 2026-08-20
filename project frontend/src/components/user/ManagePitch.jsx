@@ -76,65 +76,8 @@ const ManagePitch = () => {
 
   return (
     <>
-      {/* Modal Search Start */}
-      <div
-        className="modal fade"
-        id="searchModal"
-        tabIndex={-1}
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-fullscreen">
-          <div className="modal-content rounded-0">
-            <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">
-                Search by keyword
-              </h5>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              />
-            </div>
-            <div className="modal-body d-flex align-items-center">
-              <div className="input-group w-75 mx-auto d-flex">
-                <input
-                  type="search"
-                  className="form-control bg-transparent p-3"
-                  placeholder="keywords"
-                  aria-describedby="search-icon-1"
-                />
-                <span id="search-icon-1" className="input-group-text p-3">
-                  <i className="fa fa-search" />
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Modal Search End */}
-      {/* Hero Start */}
-      {/* <div className="container-fluid bg-light py-6 my-6 mt-0">
-          <div className="container text-center animated bounceInDown">
-            <h1 className="display-1 mb-4">Register</h1>
-            <ol className="breadcrumb justify-content-center mb-0 animated bounceInDown">
-              <li className="breadcrumb-item">
-                <a href="#">Home</a>
-              </li>
-              <li className="breadcrumb-item">
-                <a href="#">Pages</a>
-              </li>
-              <li className="breadcrumb-item text-dark" aria-current="page">
-                Register
-              </li>
-            </ol>
-          </div>
-        </div> */}
-      {/* Hero End */}
-
       {/* Contact Start */}
-      <div
+      {/* <div
         className="container-fluid contact py-6 wow bounceInUp"
         data-wow-delay="0.1s"
       >
@@ -142,9 +85,6 @@ const ManagePitch = () => {
           <div className="p-5 bg-light rounded contact-form">
             <div className="row g-4 ms-5">
               <div className="col-12">
-                {/* <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">
-                    Get in touch
-                  </small> */}
                 <h1 className="display-5 mb-0 text-center">Manage Pitch</h1>
               </div>
               <div className="col-md-6 col-lg-7">
@@ -221,38 +161,106 @@ const ManagePitch = () => {
                   </div>
                 </div>
               </div>
-              {/* <div className="col-md-6 col-lg-5">
-                  <div>
-                    <div className="d-inline-flex w-100 border border-primary p-4 rounded mb-4">
-                      <i className="fas fa-map-marker-alt fa-2x text-primary me-4" />
-                      <div className="">
-                        <h4>Address</h4>
-                        <p>123 Street, New York, USA</p>
-                      </div>
-                    </div>
-                    <div className="d-inline-flex w-100 border border-primary p-4 rounded mb-4">
-                      <i className="fas fa-envelope fa-2x text-primary me-4" />
-                      <div className="">
-                        <h4>Mail Us</h4>
-                        <p className="mb-2">info@example.com</p>
-                        <p className="mb-0">support@example.com</p>
-                      </div>
-                    </div>
-                    <div className="d-inline-flex w-100 border border-primary p-4 rounded">
-                      <i className="fa fa-phone-alt fa-2x text-primary me-4" />
-                      <div className="">
-                        <h4>Telephone</h4>
-                        <p className="mb-2">(+012) 3456 7890 123</p>
-                        <p className="mb-0">(+704) 5555 0127 296</p>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Contact End */}
+
+      <div className="row g-4">
+        {data.map((el, i) => (
+          <div className="col-8" key={el._id}>
+            <div className="card border-0 shadow-sm rounded-4 overflow-hidden">
+              <div className="card-body p-4">
+                <div className="row align-items-center g-4">
+                  {/* Serial Number */}
+                  <div className="col-md-1 text-center">
+                    <span className="badge bg-light text-dark fs-6 p-3 rounded-circle">
+                      {i + 1}
+                    </span>
+                  </div>
+
+                  {/* Image / Video */}
+                  <div className="col-md-2 text-center">
+                    <img
+                      src={el.pitchVideoUrl}
+                      alt="Pitch"
+                      className="img-fluid rounded-3"
+                      style={{
+                        width: "130px",
+                        height: "90px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+
+                  {/* Pitch Details */}
+                  <div className="col-md-5">
+                    <div className="d-flex align-items-center gap-2 mb-2">
+                      {/* FIXED CATEGORY */}
+                      <span className="badge bg-primary text-dark px-3 py-2 rounded-pill">
+                        {el.category?.categoryName}
+                      </span>
+                    </div>
+
+                    <h4 className="mb-2">{el.title}</h4>
+
+                    <p className="text-muted mb-3">{el.description}</p>
+
+                    <div className="row">
+                      <div className="col-sm-6">
+                        <small className="text-muted d-block">
+                          Target Amount
+                        </small>
+
+                        <strong>₹ {el.targetAmount}</strong>
+                      </div>
+
+                      <div className="col-sm-6">
+                        <small className="text-muted d-block">
+                          Current Amount
+                        </small>
+
+                        <strong>₹ {el.currentAmount}</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="col-md-2">
+                    <div className="d-flex flex-column gap-2">
+                      <button
+                        className="btn btn-outline-dark"
+                        onClick={() => navigate(`/user/updatePitch/${el._id}`)}
+                      >
+                        <i className="fas fa-pen me-2"></i>
+                        Edit
+                      </button>
+
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => deletePitch(el._id)}
+                      >
+                        <i className="fas fa-trash me-2"></i>
+                        Delete
+                      </button>
+
+                      <div className="d-flex justify-content-between align-items-center border rounded-3 px-3 py-2">
+                        <small>Status</small>
+
+                        <Switch
+                          checked={el.status}
+                          onChange={() => toggleStatus(el._id, el.status)}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </>
   );
 };
