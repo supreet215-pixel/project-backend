@@ -107,10 +107,10 @@ const UserRegister = () => {
         {/* Hero End */}
         {/* Contact Start */}
         <div
-          className="container-fluid contact py-6 wow bounceInUp"
+          className="container-fluid contact py-5 wow bounceInUp"
           data-wow-delay="0.1s"
         >
-          <div className="container">
+          <div className="container w-50">
             <div className="p-5 bg-light rounded contact-form">
               <div className="row g-4 justify-content-center">
                 <div className="col-12">

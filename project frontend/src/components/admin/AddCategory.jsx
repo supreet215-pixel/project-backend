@@ -111,38 +111,14 @@ const AddCategory = () => {
           </div>
         </div>
       </div>
-      {/* Modal Search End */}
-      {/* Hero Start */}
-      {/* <div className="container-fluid bg-light py-6 my-6 mt-0">
-          <div className="container text-center animated bounceInDown">
-            <h1 className="display-1 mb-4">Register</h1>
-            <ol className="breadcrumb justify-content-center mb-0 animated bounceInDown">
-              <li className="breadcrumb-item">
-                <a href="#">Home</a>
-              </li>
-              <li className="breadcrumb-item">
-                <a href="#">Pages</a>
-              </li>
-              <li className="breadcrumb-item text-dark" aria-current="page">
-                Register
-              </li>
-            </ol>
-          </div>
-        </div> */}
-      {/* Hero End */}
-
-      {/* Contact Start */}
       <div
-        className="container-fluid contact py-6 wow bounceInUp"
+        className="container-fluid contact py-5 wow bounceInUp"
         data-wow-delay="0.1s"
       >
         <div className="container">
           <div className="p-5 bg-light rounded contact-form">
             <div className="row g-4 justify-content-center">
               <div className="col-12">
-                {/* <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">
-                    Get in touch
-                  </small> */}
                 <h1 className="display-5 mb-0 text-center">Add Category</h1>
               </div>
               <div className="col-md-6 col-lg-7">

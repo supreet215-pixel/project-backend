@@ -127,19 +127,19 @@ function About() {
       {/* Working Features */}
 
       {/* Fact Start */}
-      <div className="container-fluid faqt py-1">
+      <div className="container-fluid faqt py-6">
           <div className="container">
             <div className="row g-4 align-items-center">
               {/* Statistics Section */}
-              <div className="col-lg-7">
+              <div className="col-lg-6">
                 <div className="row g-4">
                   {/* Large Top Card */}
                   <div className="col-12 wow bounceInUp" data-wow-delay="0.3s">
-                    <div className="faqt-item bg-primary rounded p-4 text-center">
+                    <div className="faqt-item bg-primary rounded p-3 text-center">
                       <i className="fas fa-lightbulb fa-3x mb-3 text-white" />
 
                       <h1
-                        className="display-4 fw-bold"
+                        className="display-5 fw-bold"
                         data-toggle="counter-up"
                       >
                         1200+
@@ -156,11 +156,11 @@ function About() {
                     className="col-sm-6 wow bounceInUp"
                     data-wow-delay="0.5s"
                   >
-                    <div className="faqt-item bg-primary rounded p-4 text-center">
+                    <div className="faqt-item bg-primary rounded p-3 text-center">
                       <i className="fas fa-users fa-3x mb-3 text-white" />
 
                       <h1
-                        className="display-4 fw-bold"
+                        className="display-5 fw-bold"
                         data-toggle="counter-up"
                       >
                         15000+
@@ -177,11 +177,11 @@ function About() {
                     className="col-sm-6 wow bounceInUp"
                     data-wow-delay="0.7s"
                   >
-                    <div className="faqt-item bg-primary rounded p-4 text-center">
-                       <i className="fas fa-check fa-3x mb-3 text-white" />
+                    <div className="faqt-item bg-primary rounded p-3 text-center">
+                      <i className="fas fa-check fa-3x mb-3 text-white" />
 
                       <h1
-                        className="display-4 fw-bold"
+                        className="display-5 fw-bold"
                         data-toggle="counter-up"
                       >
                         50L+
@@ -195,22 +195,16 @@ function About() {
                 </div>
               </div>
 
-              {/* Video Section - Kept Unchanged */}
-              <div className="col-lg-5 wow bounceInUp" data-wow-delay="0.1s">
-                <div className="col-lg-6 wow bounceInUp" data-wow-delay="0.1s">
-                <img src="img/graph.png" className="img-fluid rounded" alt="" />
-              </div>
-                {/* <div className="video">
-                  <button
-                    type="button"
-                    className="btn btn-play"
-                    data-bs-toggle="modal"
-                    data-src="https://www.youtube.com/embed/DWRcNpR6Kdc"
-                    data-bs-target="#videoModal"
-                  >
-                    <span />
-                  </button>
-                </div> */}
+              {/* Image Section */}
+              <div
+                className="col-lg-6 wow bounceInUp d-flex justify-content-center align-items-center"
+                data-wow-delay="0.1s"
+              >
+                <img
+                  src="img/fact.png"
+                  className="img-fluid rounded w-100"
+                  alt="Funding Growth Graph"
+                />
               </div>
             </div>
           </div>

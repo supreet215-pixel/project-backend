@@ -58,12 +58,6 @@ function Home() {
                 >
                   Ideas
                 </a>
-                {/* <a
-                  href=""
-                  className="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 animated bounceInLeft"
-                >
-                  Know More
-                </a> */}
               </div>
               <div className="col-lg-6 col-md-12">
                 <img
@@ -129,15 +123,15 @@ function Home() {
           <div className="container">
             <div className="row g-4 align-items-center">
               {/* Statistics Section */}
-              <div className="col-lg-7">
+              <div className="col-lg-6">
                 <div className="row g-4">
                   {/* Large Top Card */}
                   <div className="col-12 wow bounceInUp" data-wow-delay="0.3s">
-                    <div className="faqt-item bg-primary rounded p-4 text-center">
+                    <div className="faqt-item bg-primary rounded p-3 text-center">
                       <i className="fas fa-lightbulb fa-3x mb-3 text-white" />
 
                       <h1
-                        className="display-4 fw-bold"
+                        className="display-5 fw-bold"
                         data-toggle="counter-up"
                       >
                         1200+
@@ -154,11 +148,11 @@ function Home() {
                     className="col-sm-6 wow bounceInUp"
                     data-wow-delay="0.5s"
                   >
-                    <div className="faqt-item bg-primary rounded p-4 text-center">
+                    <div className="faqt-item bg-primary rounded p-3 text-center">
                       <i className="fas fa-users fa-3x mb-3 text-white" />
 
                       <h1
-                        className="display-4 fw-bold"
+                        className="display-5 fw-bold"
                         data-toggle="counter-up"
                       >
                         15000+
@@ -175,11 +169,11 @@ function Home() {
                     className="col-sm-6 wow bounceInUp"
                     data-wow-delay="0.7s"
                   >
-                    <div className="faqt-item bg-primary rounded p-4 text-center">
-                       <i className="fas fa-check fa-3x mb-3 text-white" />
+                    <div className="faqt-item bg-primary rounded p-3 text-center">
+                      <i className="fas fa-check fa-3x mb-3 text-white" />
 
                       <h1
-                        className="display-4 fw-bold"
+                        className="display-5 fw-bold"
                         data-toggle="counter-up"
                       >
                         50L+
@@ -193,22 +187,16 @@ function Home() {
                 </div>
               </div>
 
-              {/* Video Section - Kept Unchanged */}
-              <div className="col-lg-5 wow bounceInUp" data-wow-delay="0.1s">
-                <div className="col-lg-6 wow bounceInUp" data-wow-delay="0.1s">
-                <img src="img/graph.png" className="img-fluid rounded" alt="" />
-              </div>
-                {/* <div className="video">
-                  <button
-                    type="button"
-                    className="btn btn-play"
-                    data-bs-toggle="modal"
-                    data-src="https://www.youtube.com/embed/DWRcNpR6Kdc"
-                    data-bs-target="#videoModal"
-                  >
-                    <span />
-                  </button>
-                </div> */}
+              {/* Image Section */}
+              <div
+                className="col-lg-6 wow bounceInUp d-flex justify-content-center align-items-center"
+                data-wow-delay="0.1s"
+              >
+                <img
+                  src="img/fact.png"
+                  className="img-fluid rounded w-100"
+                  alt="Funding Growth Graph"
+                />
               </div>
             </div>
           </div>
@@ -272,7 +260,9 @@ function Home() {
                       <i className="fas fa-rocket fa-7x text-primary mb-4" />
                       <h4 className="mb-3">Launch a Campaign</h4>
                       <p className="mb-4">
-                        Turn your creative idea into a campaign, set your funding goal, and share your vision with people who can help bring it to life.
+                        Turn your creative idea into a campaign, set your
+                        funding goal, and share your vision with people who can
+                        help bring it to life.
                       </p>
                     </div>
                   </div>
@@ -288,7 +278,9 @@ function Home() {
                       <i className="fas fa-lightbulb fa-7x text-primary mb-4" />
                       <h4 className="mb-3">Discover Projects</h4>
                       <p className="mb-4">
-                        Explore innovative projects and inspiring ideas created by passionate individuals, and find the ones you would love to support.
+                        Explore innovative projects and inspiring ideas created
+                        by passionate individuals, and find the ones you would
+                        love to support.
                       </p>
                     </div>
                   </div>
@@ -304,7 +296,9 @@ function Home() {
                       <i className="fas fa-hand-holding-heart fa-7x text-primary mb-4" />
                       <h4 className="mb-3">Support Creators</h4>
                       <p className="mb-4">
-                        Help creators turn their ideas into reality by contributing to projects you believe in and becoming part of their journey.
+                        Help creators turn their ideas into reality by
+                        contributing to projects you believe in and becoming
+                        part of their journey.
                       </p>
                     </div>
                   </div>
@@ -320,7 +314,9 @@ function Home() {
                       <i className="fas fa-shield-alt fa-7x text-primary mb-4" />
                       <h4 className="mb-3">Secure Funding</h4>
                       <p className="mb-4">
-                       Experience a safe and transparent way to support campaigns, with clear funding goals and progress tracking throughout the journey.
+                        Experience a safe and transparent way to support
+                        campaigns, with clear funding goals and progress
+                        tracking throughout the journey.
                       </p>
                     </div>
                   </div>
@@ -336,7 +332,9 @@ function Home() {
                       <i className="fas fa-chart-line fa-7x text-primary mb-4" />
                       <h4 className="mb-3">Track Progress</h4>
                       <p className="mb-4">
-                        Stay updated with campaign milestones, funding progress, and project developments to see how every contribution makes a difference.
+                        Stay updated with campaign milestones, funding progress,
+                        and project developments to see how every contribution
+                        makes a difference.
                       </p>
                     </div>
                   </div>
@@ -352,7 +350,9 @@ function Home() {
                       <i className="fas fa-users fa-7x text-primary mb-4" />
                       <h4 className="mb-3">Community Support</h4>
                       <p className="mb-4">
-                        Join a community of creators and supporters who believe in innovation, collaboration, and helping meaningful ideas grow.
+                        Join a community of creators and supporters who believe
+                        in innovation, collaboration, and helping meaningful
+                        ideas grow.
                       </p>
                     </div>
                   </div>
@@ -368,7 +368,9 @@ function Home() {
                       <i className="fas fa-coins fa-7x text-primary mb-4" />
                       <h4 className="mb-3">Flexible Contributions</h4>
                       <p className="mb-4">
-                        Support the projects you care about by contributing an amount that suits you, because every contribution can create an impact.
+                        Support the projects you care about by contributing an
+                        amount that suits you, because every contribution can
+                        create an impact.
                       </p>
                     </div>
                   </div>
@@ -384,7 +386,9 @@ function Home() {
                       <i className="fas fa-seedling fa-7x text-primary mb-4" />
                       <h4 className="mb-3">Make an Impact</h4>
                       <p className="mb-4">
-                        Be part of something meaningful by supporting innovative ideas and helping transform creative visions into real-world solutions.
+                        Be part of something meaningful by supporting innovative
+                        ideas and helping transform creative visions into
+                        real-world solutions.
                       </p>
                     </div>
                   </div>

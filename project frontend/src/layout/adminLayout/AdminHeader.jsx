@@ -21,7 +21,7 @@ function Header() {
             </button>
             <div className="collapse navbar-collapse" id="navbarCollapse">
               <div className="navbar-nav mx-auto">
-                <Link to={"/"} className="nav-item nav-link">
+                <Link to={"/admin"} className="nav-item nav-link">
                   Home
                 </Link>
                 <Link to={"/admin/addCategory"} className="nav-item nav-link">

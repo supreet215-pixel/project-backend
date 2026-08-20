@@ -27,12 +27,12 @@ function Header() {
                 <a href="/about" className="nav-item nav-link">
                   About
                 </a>
-                <a href="service.html" className="nav-item nav-link">
+                {/* <a href="service.html" className="nav-item nav-link">
                   Services
                 </a>
                 <Link to={"/"} className="nav-item nav-link">
                   menu
-                </Link>
+                </Link> */}
                 {/* <a href="menu.html" className="nav-item nav-link">
                   Menu
                 </a>
