@@ -27,9 +27,12 @@ function Header() {
                 <Link to={"/investor/viewPitch"} className="nav-item nav-link">
                   View Pitch
                 </Link>
-                {/* <Link to={"/user/managePitch"} className="nav-item nav-link">
-                  Manage Pitch
-                </Link> */}
+                <Link to={"/investor/manageInvestments"} className="nav-item nav-link">
+                  My Investments
+                </Link>
+                <Link to={"/investor/InvestmentPage"} className="nav-item nav-link">
+                  Invest
+                </Link>
                 {/* <link href="event.html" className="nav-item nav-link"/>
             Events
           

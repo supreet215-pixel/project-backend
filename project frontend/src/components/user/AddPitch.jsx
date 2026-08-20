@@ -11,7 +11,6 @@ const AddPitch = () => {
   const [pitchVideoUrl, setPitchVideoUrl] = useState("");
   const [targetAmount, setTargetAmount] = useState("");
   const [currentAmount, setCurrentAmount] = useState("");
-  const [aiScore, setAiScore] = useState("");
 
   const [loading, setLoading] = useState(false);
   const [data, setdata] = useState([]);
@@ -43,15 +42,6 @@ const AddPitch = () => {
     e.preventDefault();
 
     setLoading(true);
-    // console.log(email);
-    // console.log(password);
-
-    // const token = sessionStorage.getItem("token");
-
-    // // console.log(token);
-    // const head = {
-    //   Authorization: token,
-    // };
 
     let data = new FormData();
 
@@ -61,7 +51,6 @@ const AddPitch = () => {
     data.append("pitchVideoUrl", pitchVideoUrl);
     data.append("targetAmount", targetAmount);
     data.append("currentAmount", currentAmount);
-    data.append("aiScore", aiScore);
 
     Apiservices.AddPitch(data)
       .then((res) => {
@@ -246,15 +235,6 @@ const AddPitch = () => {
                     value={currentAmount}
                     onChange={(e) => {
                       setCurrentAmount(e.target.value);
-                    }}
-                  />
-                  <input
-                    type="text"
-                    className="w-100 form-control p-3 mb-4 border-primary bg-light"
-                    placeholder="AI score"
-                    value={aiScore}
-                    onChange={(e) => {
-                      setAiScore(e.target.value);
                     }}
                   />
                   <input

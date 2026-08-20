@@ -30,6 +30,12 @@ function Header() {
                 <Link to={"/admin/manageCategory"} className="nav-item nav-link">
                   Manage Category
                 </Link>
+                <Link to={"/admin/manageUsers"} className="nav-item nav-link">
+                  Manage Users
+                </Link>
+                <Link to={"/admin/manageInvestors"} className="nav-item nav-link">
+                  Manage Investors
+                </Link>
                 {/* <link href="event.html" className="nav-item nav-link"/>
             Events
           

@@ -150,9 +150,22 @@ const AdminDashboard = () => {
                 </button>
 
                 {/* Manage Users */}
-                <button className="btn btn-outline-dark w-100 text-start p-3">
+                <button
+                  className="btn btn-outline-dark w-100 text-start p-3 mb-3"
+                  onClick={() => navigate("/admin/manageUsers")}
+                >
                   <i className="fas fa-users me-3"></i>
                   Manage Users
+                  <i className="fas fa-arrow-right float-end mt-1"></i>
+                </button>
+
+                {/* Manage Investors */}
+                <button
+                  className="btn btn-outline-dark w-100 text-start p-3"
+                  onClick={() => navigate("/admin/manageInvestors")}
+                >
+                  <i className="fas fa-hand-holding-usd me-3"></i>
+                  Manage Investors
                   <i className="fas fa-arrow-right float-end mt-1"></i>
                 </button>
               </div>

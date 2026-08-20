@@ -30,6 +30,9 @@ function Header() {
                 <Link to={"/user/managePitch"} className="nav-item nav-link">
                   Manage Pitch
                 </Link>
+                <Link to={"/user/manageInvestments"} className="nav-item nav-link">
+                  Manage Investments
+                </Link>
                 {/* <link href="event.html" className="nav-item nav-link"/>
             Events
           

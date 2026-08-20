@@ -12,18 +12,22 @@ import AdminMaster from "./layout/adminLayout/Master";
 import AdminDashboard from "./components/admin/AdminDashboard";
 import AddCategory from "./components/admin/AddCategory";
 import ManageCategory from "./components/admin/ManageCategory";
-import UpdateCategory from "./components/admin/UpdateCategory"
+import UpdateCategory from "./components/admin/UpdateCategory";
+import ManageUsers from "./components/admin/ManageUsers";
+import ManageInvestors from "./components/admin/ManageInvestors";
 ////////////////////////////////////////////////////////////////////////////////////
 import UserMaster from "./layout/userLayout/Master";
 import UserDashboard from "./components/user/userDashboard";
 import AddPitch from "./components/user/AddPitch";
 import ManagePitch from "./components/user/ManagePitch";
+import ManageInvestments from "./components/user/ManageInvestments";
 ////////////////////////////////////////////////////////////////////////////////////
 import InvestorMaster from "./layout/investorLayout/Master";
 import InvestorDashboard from "./components/investor/InvestorDashboard";
 import ViewPitch from "./components/investor/ViewPitch";
 import PitchDetail from "./components/investor/PitchDetail";
 import InvestmentPage from "./components/investor/InvestmentPage";
+import MyInvestments from "./components/investor/MyInvestments";
 
 
 
@@ -49,6 +53,8 @@ function App() {
             <Route path="/admin/addCategory" element={<AddCategory />} />
             <Route path="/admin/manageCategory" element={<ManageCategory />} />
             <Route path='/admin/updateCategory/:_id' element={<UpdateCategory/>}/>
+            <Route path="/admin/manageUsers" element={<ManageUsers />} />
+            <Route path="/admin/manageInvestors" element={<ManageInvestors />} />
           </Route>
 
           {/* user */}
@@ -56,6 +62,7 @@ function App() {
             <Route index element={<UserDashboard />} />
             <Route path="/user/addPitch" element={<AddPitch />} />
             <Route path="/user/managePitch" element={<ManagePitch />} />
+            <Route path="/user/manageInvestments" element={<ManageInvestments />} />
           </Route>
 
           {/* investor */}
@@ -64,7 +71,7 @@ function App() {
             <Route path="/investor/viewPitch" element={<ViewPitch />} />
             <Route path="/investor/pitchDetail/:_id" element={<PitchDetail />} />
             <Route path="/investor/InvestmentPage" element={<InvestmentPage />} />
-            
+            <Route path="/investor/manageInvestments" element={<MyInvestments />} />
           </Route>
 
         </Routes>

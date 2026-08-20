@@ -21,9 +21,6 @@ const add = (req, res) => {
   if (!req.body.currentAmount) {
     errmsg.push("CurrentAmount is required");
   }
-  if (!req.body.aiScore) {
-    errmsg.push("AiScore is required");
-  }
 
   if (!req.file) {
     return res.send({
@@ -50,7 +47,9 @@ const add = (req, res) => {
           pitchObj.category = req.body.category;
           pitchObj.targetAmount = req.body.targetAmount;
           pitchObj.currentAmount = req.body.currentAmount;
-          pitchObj.aiScore = req.body.aiScore;
+          pitchObj.aiScore = req.body.aiScore || "";
+          pitchObj.ownerId = req.decoded?.userId;
+          pitchObj.created_at = Date.now();
           // pitchObj.image = req.body.image;
 
           try {

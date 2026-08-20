@@ -10,8 +10,7 @@ const PitchController = require("../apis/idea_pitch/PitchController")
 const PaymentsController = require("../apis/payments/PaymentsController")
 // const AdminActionController = require("../apis/admin_action_log/AdminActionController")
 const CategoryController = require("../apis/category/CategoryController")
-
-
+const AiController = require("../apis/ai controller/AiController")
 
 const router=require("express").Router()
 
@@ -28,7 +27,7 @@ router.post("/UserProfile/register",UserProfileController.UserRegister)
 
 
 // token checker
-router.use(require("../middleware/userTokenCheck"))
+router.use(require("../middleware/investorTokenCheck"))
 
 // comments
 router.post("/Comments/add",CommentsController.add)
@@ -46,10 +45,11 @@ router.post("/Media/UpdateMedia",MediaController.UpdateMedia)
 
 // investments
 router.post("/Investments/add",InvestmentsController.add)
+router.post("/Investments/myInvestments",InvestmentsController.myInvestments)
+router.post("/Investments/markPaid",InvestmentsController.markPaid)
 router.post("/Investments/single",InvestmentsController.single)
 router.post("/Investments/DeleteOne",InvestmentsController.DeleteOne)
 router.post("/Investments/all",InvestmentsController.all)
-// router.post("/Investments/UpdateInvestments",InvestmentsController.UpdateInvestment)
 
 // pitch
 router.post("/Pitch/add",upload.single("pitchVideoUrl"),PitchController.add)
@@ -73,6 +73,10 @@ router.post("/Payments/all",PaymentsController.all)
 // router.post("/AdminAction/UpdateAdminAction",AdminActionController.UpdateAdminAction)
 
 router.post("/Category/all",CategoryController.all)
+
+// AI Suggestion
+router.post("/getSuggestion", AiController.main)
+router.post("/aiCall", AiController.main)
 
 
 

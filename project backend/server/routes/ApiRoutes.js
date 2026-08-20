@@ -83,4 +83,17 @@ router.post("/Category/all",CategoryController.all)
 router.post("/Category/UpdateCategory",upload.single("image"),CategoryController.UpdateCategory)
 router.post("/Category/softDelete",CategoryController.softDelete)
 
+// User Profile Management (Admin)
+router.post("/UserProfile/all", UserProfileController.all)
+router.post("/UserProfile/single", UserProfileController.single)
+router.post("/UserProfile/softDelete", UserProfileController.softDelete)
+router.post("/UserProfile/DeleteOne", UserProfileController.DeleteOne)
+
+// Investor Profile Management (Admin)
+router.post("/InvProfile/all", InvProfileController.all)
+router.post("/InvProfile/single", InvProfileController.single)
+router.post("/InvProfile/softDelete", InvProfileController.softDelete)
+router.post("/InvProfile/updateKyc", InvProfileController.updateKyc)
+router.post("/InvProfile/DeleteOne", InvProfileController.DeleteOne)
+
 module.exports = router;
