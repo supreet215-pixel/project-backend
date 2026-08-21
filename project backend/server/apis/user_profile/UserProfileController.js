@@ -14,9 +14,9 @@ const UserRegister = (req, res) => {
   if (!req.body.password) {
     errMsg.push("🚫 Password is required!");
   }
-  if (!req.body.occupation) {
-    errMsg.push("🚫 Occupation is required!");
-  }
+  // if (!req.body.occupation) {
+  //   errMsg.push("🚫 Occupation is required!");
+  // }
   if (!req.body.country) {
     errMsg.push("🚫 Country is required!");
   }
@@ -51,7 +51,7 @@ const UserRegister = (req, res) => {
             .then((data) => {
               let userProfileobj = new userProfileModel();
               userProfileobj.country = req.body.country;
-              userProfileobj.occupation = req.body.occupation;
+              // userProfileobj.occupation = req.body.occupation;
               userProfileobj.userId = data._id;
               userProfileobj.address = req.body.address;
               userProfileobj.contact = req.body.contact;

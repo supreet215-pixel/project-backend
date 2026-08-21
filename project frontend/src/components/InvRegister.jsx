@@ -37,7 +37,7 @@ const InvRegister = () => {
 
         if (res.data.success) {
           toast.success("Investor Added");
-          navigate("/investor")
+          navigate("/investor");
         } else {
           toast.warning(res.data.massage);
         }
@@ -90,49 +90,16 @@ const InvRegister = () => {
           </div>
         </div>
         {/* Modal Search End */}
-        {/* Hero Start */}
-        <div className="container-fluid bg-light py-6 my-6 mt-0">
-          <div className="container text-center animated bounceInDown">
-            <h1 className="display-1 mb-4">Investor Register</h1>
-            <ol className="breadcrumb justify-content-center mb-0 animated bounceInDown">
-              <li className="breadcrumb-item">
-                <a href="#">Home</a>
-              </li>
-              <li className="breadcrumb-item">
-                <a href="#">Pages</a>
-              </li>
-              <li className="breadcrumb-item text-dark" aria-current="page">
-                Register
-              </li>
-            </ol>
-          </div>
-        </div>
-        {/* Hero End */}
-        {/* Contact Start */}
+        {/* Register Start */}
         <div
-          className="container-fluid contact py-6 wow bounceInUp"
+          className="container-fluid contact py-6 wow bounceInUp w-50"
           data-wow-delay="0.1s"
         >
           <div className="container">
-            <div className="p-5 bg-light rounded contact-form">
-              <div className="row g-4 justify-content-center">
-                <div className="col-12">
-                  {/* <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">
-                    Get in touch
-                  </small> */}
-                  <h1 className="display-5 mb-0 text-center">Register Here</h1>
-                </div>
-                <div className="col-md-6 col-lg-7">
-                  {/* <p className="mb-4">
-                    The contact form is currently inactive. Get a functional and
-                    working contact form with Ajax &amp; PHP in a few minutes.
-                    Just copy and paste the files, add a little code and you're
-                    done.{" "}
-                    <a href="https://htmlcodex.com/contact-form">
-                      Download Now
-                    </a>
-                    .
-                  </p> */}
+            <div className="row justify-content-center">
+              <div className="col-md-10 col-lg-11">
+                <div className="py-4 px-4 bg-light rounded contact-form">
+                  <h1 className="display-5 mb-4 text-center">Register</h1>
                   <form onSubmit={handleForm}>
                     <input
                       type="text"
@@ -180,19 +147,19 @@ const InvRegister = () => {
                       }}
                     /> */}
                     <select
-                    type="text"
-                    className="w-100 form-control p-3 mb-4 border-primary bg-light"
-                    placeholder="RiskPreference"
-                    value={riskPreference}
-                    onChange={(e) => {
-                      setRiskPreference(e.target.value);
-                    }}
-                  >
-                    <option>Select RiskPreference</option>
-                    <option>Low</option>
-                    <option>Medium</option>
-                    <option>High</option>
-                  </select>
+                      type="text"
+                      className="w-100 form-control p-3 mb-4 border-primary bg-light"
+                      placeholder="RiskPreference"
+                      value={riskPreference}
+                      onChange={(e) => {
+                        setRiskPreference(e.target.value);
+                      }}
+                    >
+                      <option>Select RiskPreference</option>
+                      <option>Low</option>
+                      <option>Medium</option>
+                      <option>High</option>
+                    </select>
                     {/* <textarea
                       className="w-100 form-control mb-4 p-3 border-primary bg-light"
                       rows={4}
@@ -206,10 +173,8 @@ const InvRegister = () => {
                     >
                       Register
                     </button>
-                
-                    <Link to="/User_Register">Register a user</Link>
-                    
 
+                    <Link to="/User_Register">Register a user</Link>
                   </form>
                 </div>
                 {/* <div className="col-md-6 col-lg-5">
@@ -249,4 +214,4 @@ const InvRegister = () => {
   );
 };
 
-export default InvRegister
+export default InvRegister;

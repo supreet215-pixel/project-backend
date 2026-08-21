@@ -7,7 +7,7 @@ const InvestorDashboard = () => {
 
       {/* Dashboard Heading */}
       <div className="text-center mb-5">
-        <h1 className="display-5 fw-bold">
+        <h1 className="display-4 fw-bold">
           Investor Dashboard
         </h1>
 
@@ -18,14 +18,14 @@ const InvestorDashboard = () => {
       </div>
 
       {/* Main Dashboard Cards */}
-      <div className="row g-4 justify-content-center mb-5">
+      <div className="row g-4 justify-content-center mb-5 mt-2">
 
         {/* Explore Opportunities */}
         <div className="col-lg-4 col-md-6">
           <div className="card h-100 border-0 shadow-sm text-center p-4">
 
             <div className="mb-4">
-              <i className="fas fa-lightbulb fa-3x"></i>
+              <i className="fas fa-lightbulb fa-4x"></i>
             </div>
 
             <h4 className="mb-3">
@@ -52,7 +52,7 @@ const InvestorDashboard = () => {
           <div className="card h-100 border-0 shadow-sm text-center p-4">
 
             <div className="mb-4">
-              <i className="fas fa-wallet fa-3x"></i>
+              <i className="fas fa-wallet fa-4x"></i>
             </div>
 
             <h4 className="mb-3">
@@ -65,7 +65,7 @@ const InvestorDashboard = () => {
             </p>
 
             <Link
-              to="/investor/myInvestments"
+              to="/investor/manageInvestments"
               className="btn btn-primary mt-auto"
             >
               View Investments
@@ -79,7 +79,7 @@ const InvestorDashboard = () => {
           <div className="card h-100 border-0 shadow-sm text-center p-4">
 
             <div className="mb-4">
-              <i className="fas fa-hand-holding-dollar fa-3x"></i>
+              <i className="fas fa-coins fa-4x"></i>
             </div>
 
             <h4 className="mb-3">
@@ -105,21 +105,21 @@ const InvestorDashboard = () => {
 
       {/* How It Works Section */}
       <div className="text-center py-5">
-        <h2 className="fw-bold mb-3">
+        <h1 className=" mb-3">
           How IdeaFund Works
-        </h2>
+        </h1>
 
         <p className="text-muted mb-5">
           A simple way to discover, evaluate, and support innovative ideas.
         </p>
 
-        <div className="row g-4 justify-content-center">
+        <div className="row g-4 justify-content-center mt-2">
 
           <div className="col-md-4">
             <div className="p-4 h-100">
-              <i className="fas fa-search fa-2x mb-3"></i>
+              <i className="fas fa-search fa-3x mb-3"></i>
 
-              <h5>Discover Ideas</h5>
+              <h4>Discover Ideas</h4>
 
               <p className="text-muted">
                 Explore pitches from entrepreneurs across different categories.
@@ -129,9 +129,9 @@ const InvestorDashboard = () => {
 
           <div className="col-md-4">
             <div className="p-4 h-100">
-              <i className="fas fa-file-alt fa-2x mb-3"></i>
+              <i className="fas fa-file-alt fa-3x mb-3"></i>
 
-              <h5>Review Pitches</h5>
+              <h4>Review Pitches</h4>
 
               <p className="text-muted">
                 Review project details and funding requirements before investing.
@@ -141,9 +141,9 @@ const InvestorDashboard = () => {
 
           <div className="col-md-4">
             <div className="p-4 h-100">
-              <i className="fas fa-hand-holding-dollar fa-2x mb-3"></i>
+              <i className="fas fa-coins fa-3x mb-3"></i>
 
-              <h5>Support Growth</h5>
+              <h4>Support Growth</h4>
 
               <p className="text-muted">
                 Invest in promising projects and become part of their journey.
@@ -156,9 +156,9 @@ const InvestorDashboard = () => {
 
       {/* Bottom Call To Action */}
       <div className="text-center py-5 mb-4">
-        <h3 className="fw-bold">
+        <h1>
           Find Your Next Opportunity
-        </h3>
+        </h1>
 
         <p className="text-muted mb-4">
           Explore innovative ideas and discover projects worth supporting.

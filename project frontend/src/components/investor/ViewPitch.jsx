@@ -81,7 +81,7 @@ const ViewPitch = () => {
       </div>
       {/* Hero End */}
       {/* Service Start */}
-      <div className="container-fluid service py-6">
+      <div className="container-fluid service py-5">
         <div className="container">
           <div className="text-center wow bounceInUp" data-wow-delay="0.1s">
             <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">
